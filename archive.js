@@ -1,14 +1,24 @@
 let img;
+let inconsolata;
+let estonia;
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu = `
 Đương mùa xuân, gửi thư thăm bạn học.
- .:░▒▓█     .:░▒▓█     .:░▒▓█
+Lơ thơ tơ liễu, bát ngát hương đào.
+Thôi ngày nhắn cá, lại tối trông sao,
 Mấy trùng non thẳm, một lá thư trao,
- .:░▒▓█     .:░▒▓█     .:░▒▓█
+Lan quế đua tươi được mấy>
+Xuân huyên đôi khóm nhường nào?
+Hàn mặc xưa kia đã thế.
+Khoa danh nay những làm sao?
+Tiện gió, truyền mây, gửi nhạn,
+Bõ công rầy ước, mai ao.
 `;
 
 function preload() {
     img = loadImage("images/post-office-1930.jpg");
+    inconsolata = loadFont("font/Inconsolata-Light.ttf");
+    estonia = loadFont("font/Estonia-Regular.ttf");
 }
 
 function setup() {
@@ -40,10 +50,20 @@ function draw() {
             //
             noStroke();
             textSize(5);
-            fill(r + 100, g + 50, b);
+            textFont(inconsolata);
+            fill(r + 50, g + 50, b);
             text(char, j*4, i*4);
 
         }
     }
+    img.updatePixels();
 
+    //Ngay thang
+    textAlign(TOP, LEFT);
+    textSize(12);
+    textLeading(10);
+    noStroke();
+    fill(0);
+    textFont(estonia);
+    text('Ngày 11 tháng 2 Giáp Tí\ngửi Tống-Tường-Vân, Phố-Vị Hoàng-Nam-Định', 10, 10);
 }
