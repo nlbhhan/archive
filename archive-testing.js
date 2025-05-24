@@ -1,18 +1,21 @@
 let img;
 let inconsolata;
 let estonia;
+let pinyon;
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
-    "Đương mùa xuân, gửi thư thăm bạn học"
+    "Thư thường tới người chưa thấy tới,",
+    ".",
+    "*",
+    "_"
 ];
-let chuoiKiTu2 = [
-    "Thôi", "ngày", "nhắn", "cá", "lại", "tối", "trông", "sao,"
-];
+let chuoiKiTu2 = "Bức rèm thưa lần giải bóng dương.";
 
 function preload() {
     img = loadImage("images/post-office-1930.jpg");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
+    pinyon = loadFont("font/PinyonScript-Regular.ttf");
 }
 
 function setup() {
@@ -36,46 +39,33 @@ function draw() {
             let r = img.pixels[idx];
             let g = img.pixels[idx + 1];
             let b = img.pixels[idx + 2];
-            let avg = (r+g+b)/3
+            let avg = (r+g+b)/3;
 
             //Hien thi pixels theo do sang cua hinh
-            let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu1.length));
-            let charIndex2 = int(map(avg, 0, 255, 0, chuoiKiTu2.length));
-            let char = chuoiKiTu1[charIndex];
+            let charIndex1 = int(map(avg, 150, 255, 0, chuoiKiTu1.length));
+            let charIndex2 = int(map(avg, 100, 255, 0, chuoiKiTu2.length));
+            let char1 = chuoiKiTu1[charIndex1];
             let char2 = chuoiKiTu2[charIndex2];
 
-            //
-            noStroke();
-            textSize(10);
-            textLeading(14);
-            textAlign(TOP, LEFT);
-            textFont(inconsolata);
-            fill(r,g,b);
-            if (avg>=200) {
-                text(char, j*10, i*10);
-            } 
-            if (avg<200) {
-                // fill("yellow");
-                text(char2, j*20, i*20);
-            }
+                if (avg>=150) {
+                    
+                    noStroke();
+                    textSize(12);
+                    textLeading(20);
+                    textAlign(TOP, LEFT);
+                    textFont(inconsolata);
+                    fill(r,g,b);
+                    text(char1, j*12, i*12);
+                    
+                }
+
+                // if (avg < 100) {
+                //     fill(r,g,b);
+                //     text(char2, j, i);
+                // }
         }
     }
     img.updatePixels();
 
-    // //Ngay thang
-    // textAlign(TOP, LEFT);
-    // textSize(30);
-    // textLeading(30);
-    // noStroke();
-    // fill(255);
-    // textFont(estonia);
-    // text('Ngày 11 tháng 2 Giáp Tí\ngửi Tống-Tường-Vân, Phố-Vị Hoàng-Nam-Định', 30, 50);
-
-    // //Test
-    // textSize(36);
-    // textFont(inconsolata);
-    // fill(255);
-    // noStroke();
-    // rect(210, 100, 650, 36);
-    // text('Đương mùa xuân, gửi thư thăm bạn học', 200, 200);
+   
 }
