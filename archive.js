@@ -2,18 +2,18 @@ let img;
 let inconsolata;
 let estonia;
 // let chuoiKiTu = "     .:░▒▓█";
-let chuoiKiTu = `
-Đương mùa xuân, gửi thư thăm bạn học.
-Lơ thơ tơ liễu, bát ngát hương đào.
-Thôi ngày nhắn cá, lại tối trông sao,
-Mấy trùng non thẳm, một lá thư trao,
-Lan quế đua tươi được mấy>
-Xuân huyên đôi khóm nhường nào?
-Hàn mặc xưa kia đã thế.
-Khoa danh nay những làm sao?
-Tiện gió, truyền mây, gửi nhạn,
-Bõ công rầy ước, mai ao.
-`;
+let chuoiKiTu = [
+    "Đương mùa xuân, gửi thư thăm bạn học",
+    "Lơ thơ tơ liễu, bát ngát hương đào.",
+    "Thôi ngày nhắn cá, lại tối trông sao,",
+    "Mấy trùng non thẳm, một lá thư trao",
+    "Lan quế đua tươi được mấy",
+    "Xuân huyên đôi khóm nhường nào",
+    "Hàn mặc xưa kia đã thế.",
+    "Khoa danh nay những làm sao",
+    "Tiện gió, truyền mây, gửi nhạn,",
+    "Bõ công rầy ước, mai ao."
+];
 
 function preload() {
     img = loadImage("images/post-office-1930.jpg");
@@ -22,14 +22,15 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(396, 306);
-    rectMode(CENTER);
+    // createCanvas(396, 306);
+    createCanvas(800, 600);
+    // rectMode(CENTER);
     // img.resize(396, 0);
     noLoop();
 }
 
 function draw() {
-    background(255);
+    background(0);
     // image(img, width/2, height/2);
     img.loadPixels();
 
@@ -49,21 +50,31 @@ function draw() {
 
             //
             noStroke();
-            textSize(5);
+            textSize(10);
+            textLeading(14);
+            textAlign(TOP, LEFT);
             textFont(inconsolata);
-            fill(r + 50, g + 50, b);
-            text(char, j*4, i*4);
+            fill(r,g,b);
+            text(char, j*10, i*10);
 
         }
     }
     img.updatePixels();
 
-    //Ngay thang
-    textAlign(TOP, LEFT);
-    textSize(12);
-    textLeading(10);
-    noStroke();
-    fill(0);
-    textFont(estonia);
-    text('Ngày 11 tháng 2 Giáp Tí\ngửi Tống-Tường-Vân, Phố-Vị Hoàng-Nam-Định', 10, 10);
+    // //Ngay thang
+    // textAlign(TOP, LEFT);
+    // textSize(30);
+    // textLeading(30);
+    // noStroke();
+    // fill(255);
+    // textFont(estonia);
+    // text('Ngày 11 tháng 2 Giáp Tí\ngửi Tống-Tường-Vân, Phố-Vị Hoàng-Nam-Định', 30, 50);
+
+    // //Test
+    // textSize(36);
+    // textFont(inconsolata);
+    // fill(255);
+    // noStroke();
+    // rect(210, 100, 650, 36);
+    // text('Đương mùa xuân, gửi thư thăm bạn học', 200, 200);
 }
