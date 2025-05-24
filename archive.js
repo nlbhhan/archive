@@ -1,6 +1,11 @@
 let img;
 // let chuoiKiTu = "     .:░▒▓█";
-let chuoiKiTu = "___________#################";
+let chuoiKiTu = `
+Đương mùa xuân, gửi thư thăm bạn học.
+ .:░▒▓█     .:░▒▓█     .:░▒▓█
+Mấy trùng non thẳm, một lá thư trao,
+ .:░▒▓█     .:░▒▓█     .:░▒▓█
+`;
 
 function preload() {
     img = loadImage("images/post-office-1930.jpg");
@@ -9,11 +14,12 @@ function preload() {
 function setup() {
     createCanvas(396, 306);
     rectMode(CENTER);
+    // img.resize(396, 0);
     noLoop();
 }
 
 function draw() {
-    background(0);
+    background(255);
     // image(img, width/2, height/2);
     img.loadPixels();
 
@@ -31,9 +37,11 @@ function draw() {
             let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length));
             let char = chuoiKiTu[charIndex];
 
+            //
             noStroke();
-            fill(r + 50, g + 30, b - 90);
-            text(char, j*6, i*6);
+            textSize(5);
+            fill(r + 100, g + 50, b);
+            text(char, j*4, i*4);
 
         }
     }
