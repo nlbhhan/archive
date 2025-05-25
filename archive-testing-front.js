@@ -24,14 +24,13 @@ let chuoiKiTu1 = [
     "          ",
 ];
 let chuoiKiTu2 = [
-    ".",
-    "*",
-    "_",
-    "Bức rèm thưa", 
-    "lần giải bóng dương.",
+    "Bức rèm thưa",
     "*",
     ".",
-    "        "
+    "           ",
+    ".",
+    "*",
+    "          ",
 ];
 
 function preload() {
@@ -83,7 +82,7 @@ function draw() {
                     
                 }
                 //Layer 2
-                if (avg < 180 && avg>130) {
+                if (avg < 180 && avg>100) {
                     fill(r,g,b);
                     text(char2, j*30, i*30);
                 }
@@ -104,7 +103,7 @@ function draw() {
     textFont(inconsolata);
     //Neu dua chuot den gan chu thi mau chu thay doi
     let mauChu1 = color("yellow");
-    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 50) {
+    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 200) {
         mauChu1 = color("cyan");
     }
     fill(mauChu1);
@@ -112,14 +111,14 @@ function draw() {
     textAlign(CENTER, LEFT);
     text("Thư thường tới người chưa thấy tới", windowWidth/5.5, positionThu);
     //Neu chuot ngay chu thi hien la thu
-    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 50) {
+    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 200) {
         fill(255);
         noStroke();
         rect(windowWidth/5.5, positionThu - 150, 50, 100);
     }
     pop();
 
-    //Câu 2: Bức rèm thưa lần giải bóng dương
+    //Câu 2: Bức rèm thưa lần dãi bóng dương
      if (positionBuc < 0 || positionBuc > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
     //    speedThu = speedThu * -1;
         positionBuc = 0;
@@ -131,10 +130,10 @@ function draw() {
     textAlign(CENTER, LEFT);
     textFont(inconsolata);
     let mauChu2 = color("yellow");
-    if (dist(mouseX, mouseY, windowWidth/3, positionBuc) < 100) {
+    if (dist(mouseX, mouseY, windowWidth/3, positionBuc) < 150) {
         mauChu2 = color("cyan");
     }
     fill(mauChu2);
-    text("Bức rèm thưa lần giải bóng dương.", windowWidth/3, positionBuc);
+    text("Bức rèm thưa lần dãi bóng dương.", windowWidth/3, positionBuc);
     pop();
 }
