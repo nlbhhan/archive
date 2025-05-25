@@ -5,11 +5,11 @@ let pinyon;
 
 //Cau 1
 let positionThu = 100;
-let speedThu = 5;
+let speedThu = 1;
 
 //Cau 2
 let positionBuc = 100;
-let speedBuc = 3;
+let speedBuc = 2;
 
 
 // let chuoiKiTu = "     .:░▒▓█";
@@ -24,13 +24,14 @@ let chuoiKiTu1 = [
     "          ",
 ];
 let chuoiKiTu2 = [
-    "Bức rèm thưa", 
-    // "*",
-    // ".",
-    "lần giải bóng dương.",
     ".",
     "*",
-    "_"
+    "_",
+    "Bức rèm thưa", 
+    "lần giải bóng dương.",
+    "*",
+    ".",
+    "        "
 ];
 
 function preload() {
@@ -82,7 +83,7 @@ function draw() {
                     
                 }
                 //Layer 2
-                if (avg < 100 && avg>30) {
+                if (avg < 180 && avg>130) {
                     fill(r,g,b);
                     text(char2, j*30, i*30);
                 }
@@ -98,7 +99,7 @@ function draw() {
     }
     positionThu = positionThu + speedThu;
     push();
-    textSize(21);
+    textSize(24);
     textLeading(20);
     textFont(inconsolata);
     //Neu dua chuot den gan chu thi mau chu thay doi
@@ -108,7 +109,7 @@ function draw() {
     }
     fill(mauChu1);
     noStroke();
-    textAlign(TOP, LEFT);
+    textAlign(CENTER, LEFT);
     text("Thư thường tới người chưa thấy tới", windowWidth/5.5, positionThu);
     //Neu chuot ngay chu thi hien la thu
     if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 50) {
@@ -125,8 +126,9 @@ function draw() {
     }
     positionBuc = positionBuc + speedBuc;
     push()
-    textSize(21);
+    textSize(24);
     textLeading(20);
+    textAlign(CENTER, LEFT);
     textFont(inconsolata);
     let mauChu2 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/3, positionBuc) < 100) {
