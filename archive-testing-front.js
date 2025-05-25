@@ -28,7 +28,7 @@ let chuoiKiTu2 = [
     "*",
     ".",
     "           ",
-    ".",
+    "lần dãi bóng dương",
     "*",
     "          ",
 ];
@@ -78,7 +78,7 @@ function draw() {
                     textAlign(TOP, LEFT);
                     textFont(inconsolata);
                     fill(r,g,b);
-                    text(char1, j*30, i*30);
+                    text(char1, j*25, i*25);
                     
                 }
                 //Layer 2
