@@ -2,6 +2,8 @@ let img;
 let inconsolata;
 let estonia;
 let pinyon;
+let positionThu = 100;
+let speedThu = 10;
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
     ".",
@@ -73,23 +75,19 @@ function draw() {
     }
     img.updatePixels();
 
-   //Lia chuột tới thì dòng thơ hiện ra
-//    fill(255);
-//    rect(windowWidth/5, windowHeight/2, 10, 10);
-//    rect(100, 100, 10, 10);
-//    push();
-
-    textSize(12);
+   //Chu chay doc man hinh
+   console.log(positionThu);
+    if (positionThu < 0 || positionThu > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
+    //    speedThu = speedThu * -1;
+        positionThu = 0;
+    }
+    positionThu = positionThu + speedThu;
+    textSize(15);
     textLeading(12);
     textFont(inconsolata);
     fill("cyan");
     noStroke();
     textAlign(TOP, LEFT);
-    text("Thư thường tới người chưa thấy tới", windowWidth/5.5, windowHeight/2.5);
-
-        if (dist(mouseX, mouseY, windowWidth/5.5, windowHeight/2.5) <300) {
-            fill(255);
-            rect(100, 100, 10, 10);
-        }
-//    pop();
+    text("Thư thường tới người chưa thấy tới", windowWidth/5.5, positionThu);
+    
 }
