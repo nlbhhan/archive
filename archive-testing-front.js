@@ -2,8 +2,16 @@ let img;
 let inconsolata;
 let estonia;
 let pinyon;
+
+//Cau 1
 let positionThu = 100;
 let speedThu = 10;
+
+//Cau 2
+let positionBuc = 100;
+let speedBuc = 5;
+
+
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
     ".",
@@ -75,19 +83,49 @@ function draw() {
     }
     img.updatePixels();
 
-   //Chu chay doc man hinh
-   console.log(positionThu);
+   //Câu 1: Thư thường tới người chưa thấy tới
+//    console.log(positionThu);
     if (positionThu < 0 || positionThu > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
     //    speedThu = speedThu * -1;
         positionThu = 0;
     }
     positionThu = positionThu + speedThu;
+    push();
     textSize(15);
     textLeading(12);
     textFont(inconsolata);
-    fill("cyan");
+    //Neu dua chuot den gan chu thi mau chu thay doi
+    let mauChu1 = color("yellow");
+    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 50) {
+        mauChu1 = color("cyan");
+    }
+    fill(mauChu1);
     noStroke();
     textAlign(TOP, LEFT);
     text("Thư thường tới người chưa thấy tới", windowWidth/5.5, positionThu);
-    
+    //Neu chuot ngay chu thi hien la thu
+    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 50) {
+        fill(255);
+        noStroke();
+        rect(windowWidth/5.5, positionThu - 150, 50, 100);
+    }
+    pop();
+
+    //Câu 2: Bức rèm thưa lần giải bóng dương
+     if (positionBuc < 0 || positionBuc > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
+    //    speedThu = speedThu * -1;
+        positionBuc = 0;
+    }
+    positionBuc = positionBuc + speedBuc;
+    push()
+    textSize(15);
+    textLeading(12);
+    textFont(inconsolata);
+    let mauChu2 = color("yellow");
+    if (dist(mouseX, mouseY, windowWidth/3, positionBuc) < 100) {
+        mauChu2 = color("cyan");
+    }
+    fill(mauChu2);
+    text("Bức rèm thưa lần giải bóng dương.", windowWidth/3, positionBuc);
+    pop();
 }
