@@ -5,23 +5,29 @@ let pinyon;
 
 //Cau 1
 let positionThu = 100;
-let speedThu = 10;
+let speedThu = 5;
 
 //Cau 2
 let positionBuc = 100;
-let speedBuc = 5;
+let speedBuc = 3;
 
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
     ".",
+    "        ",
     "Thư thường tới", "người chưa thấy tới,",
+    "         ",
+    "         ",
     ".",
     "*",
-    " "
+    "          ",
 ];
 let chuoiKiTu2 = [
-    "Bức rèm thưa", "lần giải bóng dương.",
+    "Bức rèm thưa", 
+    // "*",
+    // ".",
+    "lần giải bóng dương.",
     ".",
     "*",
     "_"
@@ -63,21 +69,22 @@ function draw() {
             let char1 = chuoiKiTu1[charIndex1];
             let char2 = chuoiKiTu2[charIndex2];
 
-                if (avg>=180) {
+                //Layer 1
+                if (avg>=180 && avg<200) {
                     
                     noStroke();
-                    textSize(10);
+                    textSize(18);
                     textLeading(20);
                     textAlign(TOP, LEFT);
                     textFont(inconsolata);
                     fill(r,g,b);
-                    text(char1, j*12.6, i*12.6);
+                    text(char1, j*30, i*30);
                     
                 }
-
-                if (avg < 180) {
+                //Layer 2
+                if (avg < 100 && avg>30) {
                     fill(r,g,b);
-                    text(char2, j*15, i*15);
+                    text(char2, j*30, i*30);
                 }
         }
     }
@@ -91,8 +98,8 @@ function draw() {
     }
     positionThu = positionThu + speedThu;
     push();
-    textSize(15);
-    textLeading(12);
+    textSize(21);
+    textLeading(20);
     textFont(inconsolata);
     //Neu dua chuot den gan chu thi mau chu thay doi
     let mauChu1 = color("yellow");
@@ -118,8 +125,8 @@ function draw() {
     }
     positionBuc = positionBuc + speedBuc;
     push()
-    textSize(15);
-    textLeading(12);
+    textSize(21);
+    textLeading(20);
     textFont(inconsolata);
     let mauChu2 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/3, positionBuc) < 100) {
