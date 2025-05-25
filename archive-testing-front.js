@@ -1,19 +1,23 @@
 let img;
-let front;
 let inconsolata;
 let estonia;
 let pinyon;
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
-    "Thư thường tới người chưa thấy tới,",
+    "Thư thường tới", "người chưa thấy tới,",
+    ".",
+    "*",
+    " "
+];
+let chuoiKiTu2 = [
+    "Bức rèm thưa", "lần giải bóng dương.",
     ".",
     "*",
     "_"
 ];
-let chuoiKiTu2 = "Bức rèm thưa lần giải bóng dương.";
 
 function preload() {
-    img = loadImage("images/post-office-1930.jpg");
+    img = loadImage("images/IMG_1761.jpg");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     pinyon = loadFont("font/PinyonScript-Regular.ttf");
@@ -21,7 +25,7 @@ function preload() {
 
 function setup() {
     // createCanvas(396, 306);
-    createCanvas(800, 600);
+    createCanvas(windowWidth, windowHeight);
     // rectMode(CENTER);
     // img.resize(396, 0);
     noLoop();
@@ -44,14 +48,14 @@ function draw() {
 
             //Hien thi pixels theo do sang cua hinh
             let charIndex1 = int(map(avg, 150, 255, 0, chuoiKiTu1.length));
-            let charIndex2 = int(map(avg, 100, 255, 0, chuoiKiTu2.length));
+            let charIndex2 = int(map(avg, 0, 255, 0, chuoiKiTu2.length));
             let char1 = chuoiKiTu1[charIndex1];
             let char2 = chuoiKiTu2[charIndex2];
 
-                if (avg>=150) {
+                if (avg>=180) {
                     
                     noStroke();
-                    textSize(12);
+                    textSize(10);
                     textLeading(20);
                     textAlign(TOP, LEFT);
                     textFont(inconsolata);
@@ -60,10 +64,10 @@ function draw() {
                     
                 }
 
-                // if (avg < 100) {
-                //     fill(r,g,b);
-                //     text(char2, j, i);
-                // }
+                if (avg < 180) {
+                    fill(r,g,b);
+                    text(char2, j*15, i*15);
+                }
         }
     }
     img.updatePixels();
