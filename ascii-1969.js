@@ -1,9 +1,12 @@
 let img;
 let inconsolata;
 let chuoiKiTu1 = [
-    "*",
+    ".",
     "          ",
-    "."
+    "=",
+    "          ",
+    ".",
+    "*"
 ];
 
 function preload() {
@@ -17,7 +20,7 @@ function setup() {
 };
 
 function draw() {
-    background(0);
+    background(255, 0);
     img.loadPixels();
 
     for (let i=0; i<img.height; i=i+1) {
@@ -38,7 +41,7 @@ function draw() {
             textLeading(20);
             textAlign(TOP, LEFT);
             textFont(inconsolata);
-            fill(r,g,b);
+            fill(r + 100,g + 50,b);
             text(char1, j*7, i*7);
         }
     }
