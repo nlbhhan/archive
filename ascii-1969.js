@@ -34,6 +34,7 @@ function draw() {
             let avg = (r+g+b)/3;
 
             let charIndex1 = int(map(avg, 0, 255, 0, chuoiKiTu1.length));
+            let char1 = chuoiKiTu1[charIndex1];
 
             noStroke();
             textSize(10);
