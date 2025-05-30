@@ -43,14 +43,4 @@ function draw() {
         }
     }
     img.updatePixels();
-
-    push();
-        // background(0);
-        fill("yellow");
-        textSize(15);
-        textFont(inconsolata);
-        textLeading(23);
-        noStroke();
-        text("Con yêu quý của mẹ!\nVậy là đã tròn 2 năm con xa nhà,\nmẹ và các em vẫn mong nhớ con từng ngày.\nMấy ngày rồi, người ta nói ông Diệm\ncó lệnh chém những người làm cách mạng ở khắp Nam Kỳ.\nCon yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.\nCon ơi, mẹ lo lắng,\nnhưng mẹ cũng tự hào lắm!\nMẹ vẫn đi khắp các sinh hoạt dân phố, đến chợ,\nngười ta nói con của mẹ đang cống hiến cho Tổ Quốc.\nCon đang đấu tranh tiêu diệt kẻ thù ác độc,\nvà rồi con và đồng đội sẽ mang bình yên đến cho đất nước mình.\nNhận được thư này, con an lòng con nhé,\nmẹ và các em ở nhà đợi tin con.", 50, 600);
-    pop();
 }

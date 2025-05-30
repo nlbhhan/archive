@@ -1,4 +1,5 @@
 let img1930;
+let laThu1;
 let inconsolata;
 let estonia;
 let pinyon;
@@ -37,6 +38,7 @@ let chuoiKiTu3 = [
 
 function preload() {
     img1930 = loadImage("images/IMG_1761.jpg");
+    laThu1 = loadImage("images/1-Letters/1.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     pinyon = loadFont("font/PinyonScript-Regular.ttf");
@@ -45,6 +47,7 @@ function preload() {
 function setup() {
     // createCanvas(396, 306);
     createCanvas(windowWidth, windowHeight);
+    laThu1.resize(0, windowHeight);
     // rectMode(CENTER);
     // img.resize(396, 0);
     // noLoop();
@@ -100,7 +103,6 @@ function draw() {
     img1930.updatePixels();
 
    //Thang 5 nam 1959
-//    console.log(positionThu);
     if (positionThu < 0 || positionThu > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
     //    speedThu = speedThu * -1;
         positionThu = 0;
@@ -110,11 +112,22 @@ function draw() {
     textSize(20);
     textLeading(23);
     textFont(inconsolata);
-    //Neu dua chuot den gan chu thi mau chu thay doi
+    //Neu dua chuot den gan chu thi mau chu thay doi + la thu 1 hien ra
     let mauChu1 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 200) {
         mauChu1 = color("cyan");
+        image(laThu1, 0, 0);
+        //Hien chu tren la thu
+        push();
+        fill("yellow");
+        textSize(15);
+        textFont(inconsolata);
+        textLeading(23);
+        noStroke();
+        text("Con yêu quý của mẹ!\nVậy là đã tròn 2 năm con xa nhà,\nmẹ và các em vẫn mong nhớ con từng ngày.\nMấy ngày rồi, người ta nói ông Diệm\ncó lệnh chém những người làm cách mạng ở khắp Nam Kỳ.\nCon yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.\nCon ơi, mẹ lo lắng,\nnhưng mẹ cũng tự hào lắm!\nMẹ vẫn đi khắp các sinh hoạt dân phố, đến chợ,\nngười ta nói con của mẹ đang cống hiến cho Tổ Quốc.\nCon đang đấu tranh tiêu diệt kẻ thù ác độc,\nvà rồi con và đồng đội sẽ mang bình yên đến cho đất nước mình.\nNhận được thư này, con an lòng con nhé,\nmẹ và các em ở nhà đợi tin con.", 50, 600);
+    pop();
     }
+    //Su kien
     fill(mauChu1);
     noStroke();
     textAlign(LEFT, CENTER);
@@ -138,19 +151,5 @@ function draw() {
     }
     fill(mauChu2);
     text("Tháng 2 năm 1971\nQuân và dân Việt Nam - quân và dân Lào\ntrong cuộc hành quân “Lam Sơn 719”\nở Đường 9 - Nam Lào", windowWidth/2, positionBuc);
-    pop();
-
-
-    //Hien la thu 1959
-    push();
-    if (dist(mouseX, mouseY, windowWidth/7, positionThu) < 200) {
-        background(0);
-        fill("yellow");
-        textSize(20);
-        textFont(inconsolata);
-        textLeading(24);
-        noStroke();
-        text("Con yêu quý của mẹ!\nVậy là đã tròn 2 năm con xa nhà,\nmẹ và các em vẫn mong nhớ con từng ngày.\nMấy ngày rồi, người ta nói ông Diệm\ncó lệnh chém những người làm cách mạng ở khắp Nam Kỳ.\nCon yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.\nCon ơi, mẹ lo lắng,\nnhưng mẹ cũng tự hào lắm!\nMẹ vẫn đi khắp các sinh hoạt dân phố, đến chợ,\nngười ta nói con của mẹ đang cống hiến cho Tổ Quốc.\nCon đang đấu tranh tiêu diệt kẻ thù ác độc,\nvà rồi con và đồng đội sẽ mang bình yên đến cho đất nước mình.\nNhận được thư này, con an lòng con nhé,\nmẹ và các em ở nhà đợi tin con.", 100, 100);
-    }
     pop();
 }
