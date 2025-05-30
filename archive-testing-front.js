@@ -14,23 +14,25 @@ let speedBuc = 2;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
-    ".",
+    "*",
     "        ",
-    "Thư thường tới", "người chưa thấy tới,",
     "         ",
-    "         ",
+    "người không thấy lại",,
+    ".",
+    "Tin gởi đi",
+    "          ",
+];
+let chuoiKiTu2 = [
+    "*",
     ".",
     "*",
     "          ",
 ];
-let chuoiKiTu2 = [
-    "Bức rèm thưa",
-    "*",
+let chuoiKiTu3 = [
+    "Hoa Dương tàn",
     ".",
-    "           ",
-    "lần dãi bóng dương",
     "*",
-    "          ",
+    "đã trải rêu xanh"
 ];
 
 function preload() {
@@ -66,26 +68,33 @@ function draw() {
             //Hien thi pixels theo do sang cua hinh
             let charIndex1 = int(map(avg, 150, 255, 0, chuoiKiTu1.length));
             let charIndex2 = int(map(avg, 0, 255, 0, chuoiKiTu2.length));
+            let charIndex3 = int(map(avg, 0, 255, 0, chuoiKiTu3.length));
             let char1 = chuoiKiTu1[charIndex1];
             let char2 = chuoiKiTu2[charIndex2];
+            let char3 = chuoiKiTu3[charIndex3];
 
-                //Layer 1
-                if (avg>=180 && avg<200) {
+                //Cau 1
+                if (avg>=190 && avg<250) {
                     
                     noStroke();
-                    textSize(18);
+                    textSize(10);
                     textLeading(20);
                     textAlign(TOP, LEFT);
                     textFont(inconsolata);
                     fill(r,g,b);
-                    text(char1, j*25, i*25);
+                    text(char1, j*18, i*18);
                     
                 }
-                //Layer 2
-                if (avg < 180 && avg>100) {
+                //Cau 2
+                if (avg <= 190 && avg>100) {
                     fill(r,g,b);
                     text(char2, j*30, i*30);
                 }
+                //Cau 3
+                // if (avg >=0 && avg <=100) {
+                //     fill(r,g,b);
+                //     text(char1, j*30, i*30);
+                // }
         }
     }
     img.updatePixels();
@@ -98,8 +107,8 @@ function draw() {
     }
     positionThu = positionThu + speedThu;
     push();
-    textSize(24);
-    textLeading(20);
+    textSize(20);
+    textLeading(23);
     textFont(inconsolata);
     //Neu dua chuot den gan chu thi mau chu thay doi
     let mauChu1 = color("yellow");
@@ -108,10 +117,10 @@ function draw() {
     }
     fill(mauChu1);
     noStroke();
-    textAlign(CENTER, LEFT);
-    text("Thư thường tới người chưa thấy tới", windowWidth/5.5, positionThu);
+    textAlign(LEFT, CENTER);
+    text("Tháng 5 năm 1959\n“Quốc hội” của chính quyền Ngô Đình Diệm\nđưa ra đạo luật số 10 năm 1959\nđem máy chém đi khắp miền Nam\nđể tăng cường tàn sát\nnhững người cách mạng.", windowWidth/7, positionThu);
     //Neu chuot ngay chu thi hien la thu
-    if (dist(mouseX, mouseY, windowWidth/5.5, positionThu) < 200) {
+    if (dist(mouseX, mouseY, windowWidth/7, positionThu) < 200) {
         fill(255);
         noStroke();
         rect(windowWidth/5.5, positionThu - 150, 50, 100);
@@ -125,15 +134,15 @@ function draw() {
     }
     positionBuc = positionBuc + speedBuc;
     push()
-    textSize(24);
-    textLeading(20);
-    textAlign(CENTER, LEFT);
+    textSize(20);
+    textLeading(23);
+    textAlign(LEFT, CENTER);
     textFont(inconsolata);
     let mauChu2 = color("yellow");
-    if (dist(mouseX, mouseY, windowWidth/3, positionBuc) < 150) {
+    if (dist(mouseX, mouseY, windowWidth/2, positionBuc) < 150) {
         mauChu2 = color("cyan");
     }
     fill(mauChu2);
-    text("Bức rèm thưa lần dãi bóng dương.", windowWidth/3, positionBuc);
+    text("Tháng 2 năm 1971\nQuân và dân Việt Nam - quân và dân Lào\ntrong cuộc hành quân “Lam Sơn 719”\nở Đường 9 - Nam Lào", windowWidth/2, positionBuc);
     pop();
 }
