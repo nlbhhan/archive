@@ -2,7 +2,8 @@ let img1930;
 let laThu1;
 let inconsolata;
 let estonia;
-let pinyon;
+let syneMono;
+
 
 //Thu 1
 let position1959 = 100;
@@ -45,7 +46,7 @@ function preload() {
     laThu1 = loadImage("images/1-Letters/1.2.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
-    pinyon = loadFont("font/PinyonScript-Regular.ttf");
+    syneMono = loadFont("font/SyneMono-Regular.ttf");
 }
 
 function setup() {
@@ -117,6 +118,9 @@ function draw() {
     textLeading(23);
     textFont(inconsolata);
     let mauChu1 = color("yellow");
+    if (dist(mouseX, mouseY, windowWidth/5, position1959) < 100) {
+        mauChu1 = color("cyan");
+        };
     //Su kien
     fill(mauChu1);
     noStroke();
@@ -164,19 +168,17 @@ function draw() {
 
     //Neu dua chuot den gan chu thi mau chu thay doi + la thu 1 hien ra
     if (dist(mouseX, mouseY, windowWidth/5, position1959) < 100) {
-        mauChu1 = color("blue");
         background(0, 150);
-        // image(laThu1, windowWidth/1.65, 0);
         //Hien chu tren la thu
         push();
         fill("beige");
         textSize(50);
-        textAlign (LEFT, CENTER);
-        textFont(estonia);
-        textLeading(50);
+        textAlign (LEFT, TOP);
+        textFont(syneMono);
+        textLeading(45);
         noStroke();
-        text("Ngày 15 tháng 1 năm 1960", windowWidth/22, 400);
-        text("Con yêu quý của mẹ!\nVậy là đã tròn 2 năm con xa nhà,\nmẹ và các em vẫn mong nhớ con từng ngày.\nMấy ngày rồi, người ta nói ông Diệm\ncó lệnh chém những người làm cách mạng ở khắp Nam Kỳ.\nCon yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.\nCon ơi, mẹ lo lắng,\nnhưng mẹ cũng tự hào lắm!\nMẹ vẫn đi khắp các sinh hoạt dân phố, đến chợ,\nngười ta nói con của mẹ đang cống hiến cho Tổ Quốc.\nCon đang đấu tranh tiêu diệt kẻ thù ác độc,\nvà rồi con và đồng đội sẽ mang bình yên đến cho đất nước mình.\nNhận được thư này, con an lòng con nhé,\nmẹ và các em ở nhà đợi tin con.", windowWidth/22, 500);
+        text("Ngày 15 tháng 1 năm 1960", windowWidth/22, 50);
+        text("Con yêu quý của mẹ!\nVậy là đã tròn 2 năm con xa nhà,\nmẹ và các em vẫn mong nhớ con từng ngày.\nMấy ngày rồi, người ta nói ông Diệm\ncó lệnh chém những người làm cách mạng ở khắp Nam Kỳ.\nCon yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.\nCon ơi, mẹ lo lắng,\nnhưng mẹ cũng tự hào lắm!\nMẹ vẫn đi khắp các sinh hoạt dân phố, đến chợ,\nngười ta nói con của mẹ đang cống hiến cho Tổ Quốc.\nCon đang đấu tranh tiêu diệt kẻ thù ác độc,\nvà rồi con và đồng đội sẽ mang bình yên đến cho đất nước mình.\nNhận được thư này, con an lòng con nhé,\nmẹ và các em ở nhà đợi tin con.", windowWidth/22, 150);
         pop();
     }
 }
