@@ -32,11 +32,19 @@ let speed1959 = 1;
 
 //Thu 2
 let position1971 = 100;
-let speed1971 = 2;
+let speed1971 = 1;
 
 //Thu 3
 let position1972 = 20;
 let speed1972 = 0.5;
+
+//Thu 4
+let position1975 = -20;
+let speed1975 = 1;
+
+//Thu 5
+let position1915 = -10;
+let speed1915 = 1.5;
 
 
 // let chuoiKiTu = "     .:░▒▓█";
@@ -131,9 +139,29 @@ function draw() {
     }
     img1930.updatePixels();
 
+    let mauChu = color("yellow");
+
+    //Thang 7 nam 1915
+    if (position1915 < -10 || position1915 > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
+        position1915 = -10;
+    }
+    position1915 = position1915 + speed1915;
+    push();
+    textSize(20);
+    textLeading(23);
+    textFont(inconsolata);
+    if (dist(mouseX, mouseY, windowWidth/2.6 , position1915) < 100) {
+        mauChu = color("cyan");
+        };
+    fill(mauChu);
+    noStroke();
+    textAlign(LEFT, TOP);
+    text("1915\nThợ xứ Nam Kỳ\nđược đi học hỏi\ntừ các điền chủ\nBắc Kì người Việt\nvà người Pháp", windowWidth/2.6, position1915);
+    pop();
+
+
    //Thang 5 nam 1959
     if (position1959 < 0 || position1959 > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
-    //    speed1959 = speed1959 * -1;
         position1959 = 0;
     }
     position1959 = position1959 + speed1959;
@@ -141,16 +169,14 @@ function draw() {
     textSize(20);
     textLeading(23);
     textFont(inconsolata);
-    let mauChu1 = color("yellow");
+    // let mauChu = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/5, position1959) < 100) {
-        mauChu1 = color("cyan");
+        mauChu = color("cyan");
         };
-    //Su kien
-    fill(mauChu1);
+    fill(mauChu);
     noStroke();
     textAlign(LEFT, CENTER);
     text("Tháng 5 năm 1959\n“Quốc hội” của chính quyền Ngô Đình Diệm\nđưa ra đạo luật số 10 năm 1959\nđem máy chém đi khắp miền Nam\nđể tăng cường tàn sát\nnhững người cách mạng.", windowWidth/7, position1959);
-    //Neu chuot ngay chu thi background doi thanh la thu
     pop();
 
     //Tháng 2 năm 1971 - Lao
@@ -163,11 +189,11 @@ function draw() {
     textLeading(23);
     textAlign(LEFT, CENTER);
     textFont(inconsolata);
-    let mauChu2 = color("yellow");
+    // let mauChu2 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/2, position1971) < 150) {
-        mauChu2 = color("cyan");
+        mauChu = color("cyan");
     }
-    fill(mauChu2);
+    fill(mauChu);
     text("Tháng 2 năm 1971\nQuân và dân Việt Nam - quân và dân Lào\ntrong cuộc hành quân “Lam Sơn 719”\nở Đường 9 - Nam Lào", windowWidth/2, position1971);
     pop();
 
@@ -183,10 +209,27 @@ function draw() {
     textAlign(LEFT, CENTER);
     textFont(inconsolata);
     if (dist(mouseX, mouseY, windowWidth/22, position1972) < 150) {
-        mauChu2 = color("cyan");
+        mauChu = color("cyan");
     }
-    fill(mauChu2);
+    fill(mauChu);
     text("1972\nThành cổ Quảng Trị", windowWidth/22, position1972);
+    pop();
+
+    //1975, Giai phong mien Nam
+    if (position1975 < -20 || position1975 > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
+        position1975 = -20;
+    }
+    position1975 = position1975 + speed1975;
+    push();
+    textSize(20);
+    textLeading(23);
+    textAlign(LEFT, CENTER);
+    textFont(inconsolata);
+    if (dist(mouseX, mouseY, windowWidth/1.5, position1975) < 150) {
+        mauChu = color("cyan");
+    }
+    fill(mauChu);
+    text("Ngày 30 tháng 4 năm 1975\nQuân Giải phóng miền Nam Việt Nam tiến vào Sài Gòn,\ndẫn tới sự sụp đổ của Việt Nam Cộng hòa\nvà chấm dứt chiến tranh Việt Nam", windowWidth/1.5, position1975);
     pop();
 
 
