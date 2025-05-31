@@ -1,6 +1,7 @@
 let img1930;
 let laThu1;
 let scannedLetter1;
+let scannedLetter2;
 let inconsolata;
 let estonia;
 let syneMono;
@@ -46,6 +47,7 @@ function preload() {
     img1930 = loadImage("images/IMG_1761.jpg");
     laThu1 = loadImage("images/1-Letters/1.2.png");
     scannedLetter1 = loadImage("images/1-Letters/scanned-letter-1.png");
+    scannedLetter2 = loadImage("images/1-Letters/scanned-letter-2.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     syneMono = loadFont("font/SyneMono-Regular.ttf");
@@ -131,7 +133,7 @@ function draw() {
     //Neu chuot ngay chu thi background doi thanh la thu
     pop();
 
-    //Tháng 2 năm 1971
+    //Tháng 2 năm 1971 - Lao
     if (position1971 < 0 || position1971 > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
         position1971 = 0;
     }
@@ -172,9 +174,16 @@ function draw() {
     if (dist(mouseX, mouseY, windowWidth/5, position1959) < 100) {
         background(0, 150);
         //Hien la thu 1
-        push();
         image(scannedLetter1, windowWidth/22, 50);
         scannedLetter1.resize(0, windowHeight/1.2);
-        pop();
+    }
+
+    //La thu 2 hien ra
+    if (dist(mouseX, mouseY, windowWidth/2, position1971) < 150) {
+        background(0, 150);
+        //Hien la thu 
+        tint(200);
+        image(scannedLetter2, windowWidth/22, 50);
+        scannedLetter2.resize(0, windowHeight/1.2);
     }
 }
