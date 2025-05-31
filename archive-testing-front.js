@@ -5,7 +5,26 @@ let scannedLetter2;
 let inconsolata;
 let estonia;
 let syneMono;
+let moonDance;
 
+let thanhCoQuangtri =
+    `
+    Sài Gòn, ngày 15 tháng 8 năm 1972
+
+    Anh yêu quý của em!
+    Em cầm bút viết lá thư này trong lúc chiến trường Trị Thiên đang thắng.
+    Tin vui bay về đến Gò Công của ta, người dân, gia đình xung quanh đều đang sung sướng lắm.
+    Em cũng vui sướng nữa anh ơi. Sướng vì đất nước mình thắng lợi,
+    cũng sướng vì trong hàng ngũ những người góp phần làm nên chiến thắng có anh,
+    người em mong nhớ, là cha của các con em.
+
+    Anh vẫn nói tiếc cho thời gian chúng ta bên nhau không dài thì chiến tranh đã cướp đi hạnh phúc của em. 
+    Không anh ơi, em và con tự hào vì có một người chồng, người cha đang hết bảo vệ
+    những giấc ngủ ngon của chúng em. 
+    Anh hãy vững lòng anh nhé.
+
+    Ôm anh.
+    `;
 
 //Thu 1
 let position1959 = 100;
@@ -51,6 +70,7 @@ function preload() {
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     syneMono = loadFont("font/SyneMono-Regular.ttf");
+    moonDance = loadFont("font/MoonDance-Regular.ttf");
 }
 
 function setup() {
@@ -185,5 +205,20 @@ function draw() {
         tint(200);
         image(scannedLetter2, windowWidth/22, 50);
         scannedLetter2.resize(0, windowHeight/1.2);
+    }
+
+    //La thu 3 hien ra
+    if (dist(mouseX, mouseY, windowWidth/22, position1972) < 150) {
+        background(0, 150);
+        //Hien la thu 
+        push();
+        textSize(40);
+        noStroke();
+        fill(255);
+        textLeading(42);
+        textAlign(LEFT, TOP);
+        textFont(moonDance);
+        text(thanhCoQuangtri, windowWidth/22, 50);
+        pop();
     }
 }
