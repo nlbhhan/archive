@@ -3,6 +3,7 @@ let laThu1;
 let scannedLetter1;
 let scannedLetter2;
 let scannedLetter5;
+let scannedLetter6;
 let inconsolata;
 let estonia;
 let syneMono;
@@ -47,6 +48,10 @@ let speed1975 = 1;
 let position1915 = -10;
 let speed1915 = 1.5;
 
+//Thu 6
+let position1901 = 200;
+let speed1901 = 2;
+
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
@@ -77,6 +82,7 @@ function preload() {
     scannedLetter1 = loadImage("images/1-Letters/scanned-letter-1.png");
     scannedLetter2 = loadImage("images/1-Letters/scanned-letter-2.png");
     scannedLetter5 = loadImage("images/1-Letters/scanned-letter-5-1915.png");
+    scannedLetter6 = loadImage("images/1-Letters/scanned-letter-6-1901.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     syneMono = loadFont("font/SyneMono-Regular.ttf");
@@ -86,8 +92,11 @@ function preload() {
 function setup() {
     // createCanvas(396, 306);
     createCanvas(windowWidth, windowHeight);
+    angleMode(DEGREES);
+    rectMode(CENTER);
     laThu1.resize(0, windowHeight);
     scannedLetter5.resize(0, windowHeight/1.05);
+    scannedLetter6.resize(0, windowHeight/1.05);
     // rectMode(CENTER);
     // img.resize(396, 0);
     // noLoop();
@@ -141,6 +150,27 @@ function draw() {
         }
     }
     img1930.updatePixels();
+
+    //Thang 5 nam 1901
+    if (position1901 < -10 || position1901 > windowHeight) { 
+        position1901 = -10;
+    }
+    position1901 = position1901 + speed1901;
+    push();
+    textSize(20);
+    textLeading(23);
+    textFont(inconsolata);
+    let mauChu1901 = color("yellow");
+    if (dist(mouseX, mouseY, windowWidth/2.6 , position1901) < 100) {
+        mauChu1901 = color("cyan");
+        };
+    fill(mauChu1901);
+    noStroke();
+    textAlign(LEFT, CENTER);
+    text("1901\nPháp khai thác thuộc địa\nlần thứ nhất", windowWidth/2.6, position1901);
+    pop();
+
+
 
 
     //Thang 7 nam 1915
@@ -270,13 +300,25 @@ function draw() {
         pop();
     }
 
-     //La thu 5-1915 hien ra
+    //La thu 5-1915 hien ra
     if (dist(mouseX, mouseY, windowWidth/2.6 , position1915) < 100) {
         background(0, 150);
         //Hien la thu 
         push();
         imageMode(CENTER);
         image(scannedLetter5, windowWidth/2, windowHeight/2);
+        pop();
+    }
+
+    //La thu 6-1901 hien ra
+    if (dist(mouseX, mouseY, windowWidth/2.6 , position1901) < 100) {
+        background(0, 150);
+        //Hien la thu 
+        push();
+        translate(windowWidth/2, windowHeight/2);
+        rotate(2);
+        imageMode(CENTER);
+        image(scannedLetter6, 0, 20);
         pop();
     }
 }
