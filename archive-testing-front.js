@@ -315,10 +315,8 @@ function draw() {
         background(0, 150);
         //Hien la thu 
         push();
-        translate(windowWidth/2, windowHeight/2);
-        rotate(2);
         imageMode(CENTER);
-        image(scannedLetter6, 0, 20);
+        image(scannedLetter6, windowWidth/2, windowHeight/2.1);
         pop();
     }
 }
