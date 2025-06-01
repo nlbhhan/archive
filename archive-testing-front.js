@@ -2,6 +2,7 @@ let img1930;
 let laThu1;
 let scannedLetter1;
 let scannedLetter2;
+let scannedLetter5;
 let inconsolata;
 let estonia;
 let syneMono;
@@ -75,6 +76,7 @@ function preload() {
     laThu1 = loadImage("images/1-Letters/1.2.png");
     scannedLetter1 = loadImage("images/1-Letters/scanned-letter-1.png");
     scannedLetter2 = loadImage("images/1-Letters/scanned-letter-2.png");
+    scannedLetter5 = loadImage("images/1-Letters/scanned-letter-5-1915.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     syneMono = loadFont("font/SyneMono-Regular.ttf");
@@ -85,6 +87,7 @@ function setup() {
     // createCanvas(396, 306);
     createCanvas(windowWidth, windowHeight);
     laThu1.resize(0, windowHeight);
+    scannedLetter5.resize(0, windowHeight/1.05);
     // rectMode(CENTER);
     // img.resize(396, 0);
     // noLoop();
@@ -139,7 +142,6 @@ function draw() {
     }
     img1930.updatePixels();
 
-    let mauChu = color("yellow");
 
     //Thang 7 nam 1915
     if (position1915 < -10 || position1915 > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
@@ -150,12 +152,13 @@ function draw() {
     textSize(20);
     textLeading(23);
     textFont(inconsolata);
+    let mauChu1915 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/2.6 , position1915) < 100) {
-        mauChu = color("cyan");
+        mauChu1915 = color("cyan");
         };
-    fill(mauChu);
+    fill(mauChu1915);
     noStroke();
-    textAlign(LEFT, TOP);
+    textAlign(LEFT, CENTER);
     text("1915\nThợ xứ Nam Kỳ\nđược đi học hỏi\ntừ các điền chủ\nBắc Kì người Việt\nvà người Pháp", windowWidth/2.6, position1915);
     pop();
 
@@ -169,11 +172,11 @@ function draw() {
     textSize(20);
     textLeading(23);
     textFont(inconsolata);
-    // let mauChu = color("yellow");
+    let mauChu1959 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/5, position1959) < 100) {
-        mauChu = color("cyan");
+        mauChu1959 = color("cyan");
         };
-    fill(mauChu);
+    fill(mauChu1959);
     noStroke();
     textAlign(LEFT, CENTER);
     text("Tháng 5 năm 1959\n“Quốc hội” của chính quyền Ngô Đình Diệm\nđưa ra đạo luật số 10 năm 1959\nđem máy chém đi khắp miền Nam\nđể tăng cường tàn sát\nnhững người cách mạng.", windowWidth/7, position1959);
@@ -189,11 +192,11 @@ function draw() {
     textLeading(23);
     textAlign(LEFT, CENTER);
     textFont(inconsolata);
-    // let mauChu2 = color("yellow");
+    let mauChu1971 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/2, position1971) < 150) {
-        mauChu = color("cyan");
+        mauChu1971 = color("cyan");
     }
-    fill(mauChu);
+    fill(mauChu1971);
     text("Tháng 2 năm 1971\nQuân và dân Việt Nam - quân và dân Lào\ntrong cuộc hành quân “Lam Sơn 719”\nở Đường 9 - Nam Lào", windowWidth/2, position1971);
     pop();
 
@@ -208,10 +211,11 @@ function draw() {
     textLeading(23);
     textAlign(LEFT, CENTER);
     textFont(inconsolata);
+    let mauChu1972 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/22, position1972) < 150) {
-        mauChu = color("cyan");
+        mauChu1972 = color("cyan");
     }
-    fill(mauChu);
+    fill(mauChu1972);
     text("1972\nThành cổ Quảng Trị", windowWidth/22, position1972);
     pop();
 
@@ -225,10 +229,11 @@ function draw() {
     textLeading(23);
     textAlign(LEFT, CENTER);
     textFont(inconsolata);
+    let mauChu1975 = color("yellow");
     if (dist(mouseX, mouseY, windowWidth/1.5, position1975) < 150) {
-        mauChu = color("cyan");
+        mauChu1975 = color("cyan");
     }
-    fill(mauChu);
+    fill(mauChu1975);
     text("Ngày 30 tháng 4 năm 1975\nQuân Giải phóng miền Nam Việt Nam tiến vào Sài Gòn,\ndẫn tới sự sụp đổ của Việt Nam Cộng hòa\nvà chấm dứt chiến tranh Việt Nam", windowWidth/1.5, position1975);
     pop();
 
@@ -262,6 +267,16 @@ function draw() {
         textAlign(LEFT, TOP);
         textFont(moonDance);
         text(thanhCoQuangtri, windowWidth/22, 50);
+        pop();
+    }
+
+     //La thu 5-1915 hien ra
+    if (dist(mouseX, mouseY, windowWidth/2.6 , position1915) < 100) {
+        background(0, 150);
+        //Hien la thu 
+        push();
+        imageMode(CENTER);
+        image(scannedLetter5, windowWidth/2, windowHeight/2);
         pop();
     }
 }
