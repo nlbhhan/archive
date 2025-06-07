@@ -47,7 +47,7 @@ let speed1975 = 1;
 
 //Thu 5
 let position1915 = -10;
-let speed1915 = 1.5;
+let speed1915 = 1.8;
 
 //Thu 6
 let position1901 = 200;
@@ -62,8 +62,8 @@ let position1946 = -10;
 let speed1946 = 2;
 
 //Thu 9
-let position1954 = -15;
-let speed1954 = 1;
+let position1954 = -20;
+let speed1954 = 2.8;
 
 //Thu 10
 let position1966 = -10;
@@ -72,6 +72,10 @@ let speed1966 = 3;
 //Thu 11
 let position1990 = -20;
 let speed1990 = 4;
+
+//Thu 12
+let position2004 = 100;
+let speed2004 = 3;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
@@ -183,7 +187,7 @@ function draw() {
     textLeading(23);
     textFont(inconsolata);
     let mauChu1890 = color("yellow");
-    if (dist(mouseX, mouseY, windowWidth/5 , position1890) < 100) {
+    if (dist(mouseX, mouseY, windowWidth/4.8 , position1890) < 100) {
         mauChu1890 = color("cyan");
         };
     fill(mauChu1890);
@@ -236,7 +240,7 @@ function draw() {
 
     //Thang 1 nam 1946
     if (position1946 < -10 || position1946 > windowHeight) { 
-        position1946 = -10;
+        position1946 = 0;
     }
     position1946 = position1946 + speed1946;
     push();
@@ -254,8 +258,8 @@ function draw() {
     pop();
 
     //Thang 5 nam 1954
-    if (position1954 < -15 || position1954 > windowHeight) { 
-        position1954 = -15;
+    if (position1954 < -20 || position1954 > windowHeight) { 
+        position1954 = -30;
     }
     position1954 = position1954 + speed1954;
     push();
@@ -321,7 +325,7 @@ function draw() {
     textAlign(LEFT, CENTER);
     textFont(inconsolata);
     let mauChu1971 = color("yellow");
-    if (dist(mouseX, mouseY, windowWidth/1.9, position1971) < 150) {
+    if (dist(mouseX, mouseY, windowWidth/1.9, position1971) < 100) {
         mauChu1971 = color("cyan");
     }
     fill(mauChu1971);
@@ -383,6 +387,24 @@ function draw() {
     text("Tháng 9 năm 1990", windowWidth/22, position1990);
     pop();
 
+    //Thang 12 nam 2004
+    if (position2004 < -10 || position2004 > windowHeight) { //Nếu vị trí của Y vượt qua khỏi windowHeight thì sẽ reset lại vị trí ban đầu và tiếp tục chuyển dộng tịnh tiến từ trên xuống dưới
+        position2004 = -10;
+    }
+    position2004 = position2004 + speed2004;
+    push()
+    textSize(36);
+    textLeading(23);
+    textAlign(LEFT, CENTER);
+    textFont(inconsolata);
+    let mauChu2004 = color("yellow");
+    if (dist(mouseX, mouseY, windowWidth/1.45, position2004) < 150) {
+        mauChu2004 = color("cyan");
+    };
+    fill(mauChu2004);
+    text("Tháng 12 năm 2004", windowWidth/1.5, position2004);
+    pop();
+
 
     //Neu dua chuot den gan chu thi mau chu thay doi + la thu 1 hien ra
     if (dist(mouseX, mouseY, windowWidth/5, position1959) < 100) {
@@ -393,7 +415,7 @@ function draw() {
     }
 
     //La thu 1971 hien ra
-    if (dist(mouseX, mouseY, windowWidth/1.9, position1971) < 150) {
+    if (dist(mouseX, mouseY, windowWidth/1.9, position1971) < 100) {
         background(0, 150);
         //Hien la thu 
         tint(200);
@@ -437,7 +459,7 @@ function draw() {
     }
 
     //La thu 7-1890 hien ra
-    if (dist(mouseX, mouseY, windowWidth/5 , position1890) < 100) {
+    if (dist(mouseX, mouseY, windowWidth/4.8 , position1890) < 100) {
         background(0, 150);
         //Hien la thu 
         push();
