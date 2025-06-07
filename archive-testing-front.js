@@ -2,8 +2,8 @@ let img1930;
 let laThu1;
 let scannedLetter1;
 let scannedLetter2;
-let scannedLetter5;
-let scannedLetter6;
+let scannedLetter1915;
+let scannedLetter1901;
 let scannedLetter1890;
 let inconsolata;
 let estonia;
@@ -85,8 +85,8 @@ function preload() {
     laThu1 = loadImage("images/1-Letters/1.2.png");
     scannedLetter1 = loadImage("images/1-Letters/scanned-letter-1.png");
     scannedLetter2 = loadImage("images/1-Letters/scanned-letter-2.png");
-    scannedLetter5 = loadImage("images/1-Letters/scanned-letter-5-1915.png");
-    scannedLetter6 = loadImage("images/1-Letters/scanned-letter-6-1901.png");
+    scannedLetter1915 = loadImage("images/1-Letters/scanned-letter-5-1915.png");
+    scannedLetter1901 = loadImage("images/1-Letters/scanned-letter-6-1901.png");
     scannedLetter1890 = loadImage("images/post-office-1890.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
@@ -100,8 +100,8 @@ function setup() {
     angleMode(DEGREES);
     rectMode(CENTER);
     laThu1.resize(0, windowHeight);
-    scannedLetter5.resize(0, windowHeight/1.05);
-    scannedLetter6.resize(0, windowHeight/1.05);
+    scannedLetter1915.resize(0, windowHeight/1.10);
+    scannedLetter1901.resize(0, windowHeight/1.10);
     scannedLetter1890.resize(0, windowHeight/1.05);
     // rectMode(CENTER);
     // img.resize(396, 0);
@@ -332,7 +332,7 @@ function draw() {
         //Hien la thu 
         push();
         imageMode(CENTER);
-        image(scannedLetter5, windowWidth/2, windowHeight/2);
+        image(scannedLetter1915, windowWidth/2, windowHeight/2);
         pop();
     }
 
@@ -342,7 +342,7 @@ function draw() {
         //Hien la thu 
         push();
         imageMode(CENTER);
-        image(scannedLetter6, windowWidth/2, windowHeight/2.1);
+        image(scannedLetter1901, windowWidth/2, windowHeight/2.1);
         pop();
     }
 
