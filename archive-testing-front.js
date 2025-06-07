@@ -4,6 +4,7 @@ let scannedLetter1;
 let scannedLetter2;
 let scannedLetter5;
 let scannedLetter6;
+let scannedLetter1890;
 let inconsolata;
 let estonia;
 let syneMono;
@@ -52,6 +53,9 @@ let speed1915 = 1.5;
 let position1901 = 200;
 let speed1901 = 2;
 
+//Thu 7
+let position1890 = -30;
+let speed1890 = 1;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
@@ -83,6 +87,7 @@ function preload() {
     scannedLetter2 = loadImage("images/1-Letters/scanned-letter-2.png");
     scannedLetter5 = loadImage("images/1-Letters/scanned-letter-5-1915.png");
     scannedLetter6 = loadImage("images/1-Letters/scanned-letter-6-1901.png");
+    scannedLetter1890 = loadImage("images/post-office-1890.png");
     inconsolata = loadFont("font/Inconsolata-Light.ttf");
     estonia = loadFont("font/Estonia-Regular.ttf");
     syneMono = loadFont("font/SyneMono-Regular.ttf");
@@ -97,6 +102,7 @@ function setup() {
     laThu1.resize(0, windowHeight);
     scannedLetter5.resize(0, windowHeight/1.05);
     scannedLetter6.resize(0, windowHeight/1.05);
+    scannedLetter1890.resize(0, windowHeight/1.05);
     // rectMode(CENTER);
     // img.resize(396, 0);
     // noLoop();
@@ -151,9 +157,29 @@ function draw() {
     }
     img1930.updatePixels();
 
+    //Thang 11 nam 1890
+     if (position1890 < -10 || position1890 > windowHeight) { 
+        position1890 = -10;
+    }
+    position1890 = position1890 + speed1890;
+    push();
+    textSize(20);
+    textLeading(23);
+    textFont(inconsolata);
+    let mauChu1890 = color("yellow");
+    if (dist(mouseX, mouseY, windowWidth/5 , position1890) < 100) {
+        mauChu1890 = color("cyan");
+        };
+    fill(mauChu1890);
+    noStroke();
+    textAlign(LEFT, CENTER);
+    text("Tháng 11 năm 1890", windowWidth/5, position1890);
+    pop();
+
+
     //Thang 5 nam 1901
     if (position1901 < -10 || position1901 > windowHeight) { 
-        position1901 = -10;
+        position1901 = -30;
     }
     position1901 = position1901 + speed1901;
     push();
@@ -317,6 +343,16 @@ function draw() {
         push();
         imageMode(CENTER);
         image(scannedLetter6, windowWidth/2, windowHeight/2.1);
+        pop();
+    }
+
+    //La thu 7-1890 hien ra
+    if (dist(mouseX, mouseY, windowWidth/5 , position1890) < 100) {
+        background(0, 150);
+        //Hien la thu 
+        push();
+        imageMode(CENTER);
+        image(scannedLetter1890, windowWidth/2, windowHeight/2);
         pop();
     }
 }
