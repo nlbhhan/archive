@@ -20,7 +20,7 @@ let speed1890x2 = 8;
 
 //1901
 let position1901 = -20;
-let speed1901 = 5;
+let speed1901 = 2;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
