@@ -394,6 +394,7 @@ function draw() {
     textFont(inconsolata);
     fill('yellow');
     text("Nhiều đồng chí đã nức nở,\nta đã trốn, đã chiến đấu,\nvượt mưa bom biển đạn\nmấy mươi năm\nđể đến được ngày này,\nem ạ.", windowWidth/10, position1975);
+    text("Anh của em.",windowWidth/1.75, position1975 - 30);
     textSize(20);
     textLeading(23);
     text("Đến lúc ấy, em hãy chờ anh mang tin chiến thắng em nhé!", windowWidth/1.5, position1975);
