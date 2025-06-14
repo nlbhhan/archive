@@ -10,9 +10,6 @@ let estonia;
 let syneMono;
 let moonDance;
 
-let speed = 2;
-// let positionY = i*18;
-
 //1890
 let position1890 = 0;
 let speed1890 = 1;
@@ -154,22 +151,19 @@ function draw() {
 
                 //Cau 1
                 if (avg>=190 && avg<250) {
-                    
-                    let positionY = i*18 + speed;
                     noStroke();
                     textSize(10);
                     textLeading(20);
                     textAlign(TOP, LEFT);
                     textFont(inconsolata);
                     fill(r,g,b);
-                    text(char1, j*18, positionY);
+                    text(char1, j*18, i*18);
                     
                 }
                 //Cau 2
                 if (avg <= 190 && avg>100) {
-                    let positionY2 = i*30 * speed;
                     fill(r,g,b);
-                    text(char2, j*30, positionY2);
+                    text(char2, j*30, i*30);
                 }
                 //Cau 3
                 // if (avg >=0 && avg <=100) {
