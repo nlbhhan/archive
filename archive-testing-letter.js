@@ -85,6 +85,15 @@ let position1960x1 = 550;
 let position1971 = 800;
 let speed1971 = 1;
 
+//1972
+let position1972 =-40;
+let speed1972 = 1;
+let position1972x1 = 820;
+
+//1975
+let position1975 = 920;
+let speed1975 = 1;
+
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
     "*",
@@ -297,7 +306,7 @@ function draw() {
     };
     position1954 = position1954+speed1954;
     if (position1954x1 > windowHeight) {
-        position1954x1 = 50;
+        position1954x1 = 20;
     };
     position1954x1 = position1954x1 + speed1954x1;
     push();
@@ -350,6 +359,44 @@ function draw() {
     textFont(inconsolata);
     fill('yellow');
     text("Mẹ yêu của con,\nxin mẹ đừng khóc vì con không thể\nliên lạc thường xuyên.", windowWidth/1.5, position1971);
+    pop();
+
+    //1972
+    if (position1972 > windowHeight) {
+        position1972 = -10;
+    };
+    position1972 = position1972 + speed1972;
+    if (position1972x1 > windowHeight) {
+        position1972x1 = -10;
+    };
+    position1972x1 = position1972x1 + speed1972;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Anh yêu quý của em!", windowWidth/5, position1972);
+    textSize(20);
+    textLeading(23);
+    text("Em cầm bút viết lá thư này\ntrong lúc chiến trường\nTrị Thiên đang thắng.", windowWidth/2.5, position1972x1);
+    pop();
+
+    //1975
+    if (position1975 > windowHeight) {
+        position1975 = -30;
+    };
+    position1975 =position1975 + speed1975;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Nhiều đồng chí đã nức nở,\nta đã trốn, đã chiến đấu,\nvượt mưa bom biển đạn\nmấy mươi năm\nđể đến được ngày này,\nem ạ.", windowWidth/10, position1975);
+    textSize(20);
+    textLeading(23);
+    text("Đến lúc ấy, em hãy chờ anh mang tin chiến thắng em nhé!", windowWidth/1.5, position1975);
     pop();
 
 }
