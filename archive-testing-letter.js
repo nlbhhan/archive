@@ -10,6 +10,9 @@ let estonia;
 let syneMono;
 let moonDance;
 
+let speed = 2;
+// let positionY = i*18;
+
 //1890
 let position1890 = 0;
 let speed1890 = 1;
@@ -81,6 +84,10 @@ let position1960 = 700;
 let speed1960 = 1;
 let position1960x1 = 550;
 
+//1971
+let position1971 = 800;
+let speed1971 = 1;
+
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
     "*",
@@ -148,19 +155,21 @@ function draw() {
                 //Cau 1
                 if (avg>=190 && avg<250) {
                     
+                    let positionY = i*18 + speed;
                     noStroke();
                     textSize(10);
                     textLeading(20);
                     textAlign(TOP, LEFT);
                     textFont(inconsolata);
                     fill(r,g,b);
-                    text(char1, j*18, i*18);
+                    text(char1, j*18, positionY);
                     
                 }
                 //Cau 2
                 if (avg <= 190 && avg>100) {
+                    let positionY2 = i*30 * speed;
                     fill(r,g,b);
-                    text(char2, j*30, i*30);
+                    text(char2, j*30, positionY2);
                 }
                 //Cau 3
                 // if (avg >=0 && avg <=100) {
@@ -333,5 +342,20 @@ function draw() {
     textSize(20);
     textLeading(23);
     text("Con yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.", windowWidth/10, position1960x1);
+    pop();
+
+    //1971
+    if (position1971>windowHeight) {
+        position1971 = 0;
+    };
+    position1971 = position1971 + speed1971;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Mẹ yêu của con,\nxin mẹ đừng khóc vì con không thể\nliên lạc thường xuyên.", windowWidth/1.5, position1971);
+    pop();
 
 }
