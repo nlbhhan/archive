@@ -94,6 +94,8 @@ let position1972x1 = 820;
 let position1975 = 920;
 let speed1975 = 1;
 let position1975x1 = 950;
+let position1975x2 = 1050;
+
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
     "*",
@@ -316,7 +318,7 @@ function draw() {
     textFont(inconsolata);
     fill('yellow');
     text("Mến gửi Duật, Bình và Lam!", windowWidth/3, position1954);
-    text("Tin chiến thắng tới nườm nượp", windowWidth/1.45, position1954);
+    text("Tin chiến thắng tới nườm nượp", windowWidth/1.35, position1954);
     text("Đợi khi tao về,\ntụi mình lại\nchơi đánh trận,\ncâu cá nghe!", windowWidth/5-20, position1954x1);
     textSize(20);
     textLeading(23);
@@ -391,6 +393,10 @@ function draw() {
         position1975x1 = 20;
     };
     position1975x1 = position1975x1 + speed1975;
+    if (position1975x2 > windowHeight) {
+        position1975x2 = 10;
+    };
+    position1975x2 = position1975x2 + speed1975;
     push();
     textSize(32);
     textLeading(30);
@@ -399,6 +405,7 @@ function draw() {
     fill('yellow');
     text("Nhiều đồng chí đã nức nở,\nta đã trốn, đã chiến đấu,\nvượt mưa bom biển đạn\nmấy mươi năm để đến\nđược ngày này, em ạ.", windowWidth/10, position1975);
     text("Anh của em.",windowWidth/1.75, position1975 - 30);
+    text("Anh cũng không tài nào\ndiễn tả nổi nữa.", windowWidth/2, position1975x2);
     textSize(20);
     textLeading(23);
     text("Hẳn là tin chiến thắng\nđã về đến nơi em rồi,\nphải không em?", windowWidth/2, position1975x1);
