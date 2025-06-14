@@ -19,10 +19,10 @@ let position1890x2 = 50;
 let speed1890x2 = 1;
 
 //1901
-let position1901 = 0;
+let position1901 = -20;
 let speed1901 = 1;
-let position1901x1 = 0;
-let speed1901x1 = 4;
+let position1901x1 = 83;
+let speed1901x1 = 1;
 let position1901x2 = 0;
 let speed1901x2 = 1;
 let thu1901 = 
@@ -33,18 +33,53 @@ nên tụi nó đã bắt ông nhà em đi rồi.
     `;
 
 //1915
-let position1915 = -50;
-let speed1915 = 4;
+let position1915 = 500;
+let speed1915 = 1;
 let canhTac = 
-    `Tôi đây là người có dịp được ông chỉ bảo nhiều điều về canh tác ruộng đất
-và những vấn đề thường nhựt trong đoạn chúng tôi ở Bắc Kì.
-    `;
-let position1915x1 = 200;
+`Tôi đây là người có dịp được
+ông chỉ bảo nhiều điều
+về canh tác ruộng đất
+và những vấn đề thường nhựt
+trong đoạn chúng tôi ở Bắc Kì.
+`;
+let position1915x1 = 180;
 let speed1915x1 = 1;
 let conNua = 
 `Còn nữa, tôi cũng gieo trồng những hột giống mà ông gửi cho chúng tôi,
 và tôi mong là sẽ có quả ngon để chúng tôi cùng vượt qua vụ này.
 `;
+
+//1944
+let position1944 = 300;
+let speed1944 = 1;
+let chetViDoi = 
+`Không biết nhựt trình ở xứ Hương Cảng có đưa tin này không?
+Hôm nay chú với bố con đi nhận xác mẹ, các dì, các bác của con chết vì đói.`;
+let position1944x1 = 400;
+let speed1944x1 = 1;
+let position1944x2 = 800;
+let speedchetViDoi = 1;
+let tuiPhap = 
+`Tụi Pháp và Nhật cấm dân mình trồng lúa,
+vơ vét hết mọi tiền bạc trồng lúa mà có được,
+cũng chẳng mở cửa kho lúa để phát lương thực,
+nên dân mình đói khổ mà chết nhiều.`;
+
+//1954
+let position1954 = 360;
+let speed1954 = 1;
+let phatThanh = 
+`Phát thanh bên này nói
+bộ đội mình đã xây hào xung quanh căn cứ của địch,
+chặn đứng tiếp viện và hoạt động của chúng,
+rồi tiến đánh và giành chiến thắng`;
+let position1954x1 = 230;
+let speed1954x1 = 1;
+
+//1960
+let position1960 = 700;
+let speed1960 = 1;
+let position1960x1 = 550;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
@@ -137,15 +172,15 @@ function draw() {
     img1930.updatePixels();
 
     //Thang 11 nam 1890
-    if (position1890 < -10 || position1890>windowHeight) {
+    if (position1890>windowHeight) {
         position1890 = -10;
     };
     position1890 = position1890 + speed1890;
-    if (position1890x1 < -60 || position1890x1>windowHeight) {
+    if ( position1890x1>windowHeight) {
         position1890x1 = -60;
     };
     position1890x1 = position1890x1 + speed1890x1;
-    if (position1890x2 < -40 || position1890x2>windowHeight) {
+    if (position1890x2>windowHeight) {
         position1890x2 = -40;
     };
     position1890x2 = position1890x2 + speed1890x2;
@@ -167,16 +202,16 @@ function draw() {
     pop();
 
     //Thang 5 nam 1901
-    if (position1901 < -10 || position1901>windowHeight) {
+    if (position1901>windowHeight) {
         position1901 = -10;
     };
     position1901 = position1901 + speed1901;
-    if (position1901x1 < -20 || position1901x1>windowHeight) {
+    if (position1901x1>windowHeight) {
         position1901x1 = -20;
     };
     position1901x1 = position1901x1 + speed1901x1;
-    if (position1901x2 < -20 || position1901x2 > windowHeight) {
-        position1901x2 = -20;
+    if (position1901x2 > windowHeight) {
+        position1901x2 = -50;
     };
     position1901x2 = position1901x2 + speed1901x2;
     push();
@@ -186,10 +221,10 @@ function draw() {
     textFont(inconsolata);
     fill('yellow');
     text("Gửi anh thân mến!", 0, position1901);
-    text("Anh ơi, dạo này tụi Pháp lộng hành quá!", windowWidth/8, position1901x1);
+    text("Anh ơi, dạo này\ntụi Pháp lộng hành quá!", 0, position1901x1);
     textSize(20);
     textLeading(23);
-    text("Tụi nó ép dân bỏ nghề gốm và dệt,\nép họ mình đi đào hầm,\nlàm mỏ mười mấy giờ đồng hồ\nNgay cả nông dân nhà mình cũng gặp đủ điều khó khăn", 0, position1901x1 + 30);
+    text("Tụi nó ép dân bỏ nghề gốm và dệt,\nép họ mình đi đào hầm,\nlàm mỏ mười mấy giờ đồng hồ\nNgay cả nông dân nhà mình cũng gặp đủ điều khó khăn", 0, position1901x1 + 200);
     text('Mong anh nhận thư này, nghe anh.', windowWidth/1.5, position1901x2);
     textSize(16);
     textLeading(18);
@@ -197,11 +232,11 @@ function draw() {
     pop();
 
     //Thang 7 nam 1915
-    if (position1915 < -50 || position1915 > windowHeight) {
+    if (position1915 > windowHeight) {
         position1915 = -50;
     };
     position1915 = position1915 + speed1915;
-    if (position1915x1 < -10 || position1915x1 > windowHeight) {
+    if (position1915x1 > windowHeight) {
         position1915x1 = -10;
     };
     position1915x1 = position1915x1 + speed1915x1;
@@ -211,16 +246,92 @@ function draw() {
     noStroke();
     textFont(inconsolata);
     fill('yellow');
-    text("Thưa ông! Tôi đã về đến Cochinchine,\nnên muốn gửi đôi dòng đến ông và gia đình.", windowWidth/3, position1915);
+    text("Thưa ông! Tôi đã về đến Cochinchine,\nnên muốn gửi đôi dòng đến ông và gia đình.", windowWidth/5, position1915);
     text("Thân\nmến.", windowWidth/1.78, position1915x1-80);
     textSize(20);
     textLeading(23);
     text("Bởi thế tôi cố sức nói bà con\ndùng thuốc trừ sâu bệnh cho bông lúa,\nkhi có bệnh phải tìm thấy thuốc\nlấy thuốc uống và tiêm.", windowWidth/2.5, position1915x1);
-    text(canhTac, windowWidth/8, position1915-100);
+    text(canhTac, windowWidth/8, position1915+100);
     textSize(16);
     textLeading(18);
-    text("Trong hai tháng giời, ông và gia đình đã\nsăn sóc và giúp đỡ anh em thợ xứ chúng tôi,\ntôi lại càng biết hơn mọi người lắm.", windowWidth/1.8, position1915-90);
-    text(conNua, windowWidth/1.78, position1915x1 - 35);
+    text("Trong hai tháng giời, ông và gia đình đã\nsăn sóc và giúp đỡ anh em thợ xứ chúng tôi,\ntôi lại càng biết hơn mọi người lắm.", windowWidth/1.8, position1915+200);
+    text(conNua, windowWidth/1.78, position1915x1 - 20);
     pop();
+
+    //Nam 1944-1945
+    if (position1944 < -50 || position1944 > windowHeight) {
+        position1944 = -50;
+    };
+    position1944 = position1944 + speed1944;
+    if (position1944x1 > windowHeight) {
+        position1944x1 = -20;
+    };
+    position1944x1 = position1944x1 + speed1944x1;
+    if (position1944x2 > windowHeight) {
+        position1944x2 = -50;
+    };
+    position1944x2 = position1944x2 + speedchetViDoi;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Marie Mai yêu quý!", 0, position1944);
+    text("Mẹ con đã gượng nhiều ngày giời\nvới một miếng vải thấm đường,", windowWidth/1.5, position1944-20);
+    text("Bố con\nđi cướp kho\nvề nhà,\nmẹ con đã\nkhô quéo và\ngầy guộc ở bên đường.", windowWidth/1.78, position1944x1);
+    textSize(20);
+    textLeading(23);
+    text(chetViDoi, windowWidth/1.5, position1944+300);
+    text(tuiPhap, windowWidth/8, position1944x2);
+    text("bà chỉ uống một ngụm nhỏ, còn lại để cho các em con.", windowWidth/1.5, position1944x1);
+    text("Nhận tin này,\nmong con đừng khóc quá nhiều.", windowWidth/2.5, position1944);
+    pop();
+
+    //Nam 1954
+    if (position1954 > windowHeight) {
+        position1954 = -50;
+    };
+    position1954 = position1954+speed1954;
+    if (position1954x1 > windowHeight) {
+        position1954x1 = 50;
+    };
+    position1954x1 = position1954x1 + speed1954x1;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Mến gửi Duật, Bình và Lam!", windowWidth/3, position1954);
+    text("Tin chiến thắng tới nườm nượp", windowWidth/1.45, position1954);
+    text("Đợi khi tao về,\ntụi mình lại\nchơi đánh trận,\ncâu cá nghe!", windowWidth/5-20, position1954x1);
+    textSize(20);
+    textLeading(23);
+    text("bây không biết tao mừng rỡ\nthế nào khi mỗi ngày\nkhông nghe thấy tin về bây đâu,\nchỉ sợ bây có chuyện gì.", windowWidth/2.5, position1954+30);
+    textSize(16);
+    textLeading(18);
+    text(phatThanh, windowWidth/8, position1954+20);
+
+    //1960
+    if (position1960>windowHeight) {
+        position1960 = -50;
+    };
+    position1960 = position1960 + speed1960;
+    if (position1960x1 > windowHeight) {
+        position1960x1 = -50;
+    };
+    position1960x1 = position1960x1 + speed1960;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Mấy ngày rồi,\nngười ta nói ông Diệm\ncó lệnh chém những người\nlàm cách mạng ở khắp Nam Kỳ.", windowWidth/3, position1960);
+    text("và rồi con và đồng đội\nsẽ mang bình yên\nđến cho đất nước mình.", 0, position1960+20);
+    textSize(20);
+    textLeading(23);
+    text("Con yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.", windowWidth/10, position1960x1);
 
 }
