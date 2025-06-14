@@ -22,25 +22,29 @@ let speed1890x2 = 1;
 let position1901 = 0;
 let speed1901 = 1;
 let position1901x1 = 0;
-let speed1901x1 = 8;
+let speed1901x1 = 4;
 let position1901x2 = 0;
 let speed1901x2 = 1;
 let thu1901 = 
-    `Tụi nó cướp lúa gạo thì thôi, còn lấy hết ruộng đất,
+`Tụi nó cướp lúa gạo thì thôi, còn lấy hết ruộng đất,
 cứ một dạo lại bắt nộp thêm một loại sưu cắt cổ mới.
 Em thì làm gì còn tiền mà nộp nữa hả anh,
 nên tụi nó đã bắt ông nhà em đi rồi.
     `;
 
 //1915
-let position1915 = 0;
-let speed1915 = 10;
+let position1915 = -50;
+let speed1915 = 4;
 let canhTac = 
     `Tôi đây là người có dịp được ông chỉ bảo nhiều điều về canh tác ruộng đất
 và những vấn đề thường nhựt trong đoạn chúng tôi ở Bắc Kì.
     `;
 let position1915x1 = 200;
 let speed1915x1 = 1;
+let conNua = 
+`Còn nữa, tôi cũng gieo trồng những hột giống mà ông gửi cho chúng tôi,
+và tôi mong là sẽ có quả ngon để chúng tôi cùng vượt qua vụ này.
+`;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
@@ -159,7 +163,7 @@ function draw() {
     text("Tôi là lái buôn trong một công ty vận chuyển của Pháp, đóng tại xứ Nam Kì.", windowWidth/5 + 30, position1890 + 60);
     text("Chúng tôi thường đi thuyền để đến Vân Nam - Trung Quốc,\nbuôn bán và đổi chác hàng hóa.", windowWidth/5-20, position1890 + 90);
     text("Chúng tôi không rõ chúng là người Pháp, hay kẻ vãn lai,", windowWidth/8, position1890+140);
-    text(" Chúng còn nói mai đây sẽ đóng quân trên bờ,\nvà rồi thì các quan cũng phải nghe lịnh của chúng.", 0, position1890+180);
+    text("Chúng còn nói mai đây sẽ đóng quân trên bờ,\nvà rồi thì các quan cũng phải nghe lịnh của chúng.", 0, position1890+180);
     pop();
 
     //Thang 5 nam 1901
@@ -185,16 +189,16 @@ function draw() {
     text("Anh ơi, dạo này tụi Pháp lộng hành quá!", windowWidth/8, position1901x1);
     textSize(20);
     textLeading(23);
-    text("Tụi nó ép dân bỏ nghề gốm và dệt,\nép họ mình đi đào hầm,\nlàm mỏ mười mấy giờ đồng hồ\nNgay cả nông dân nhà mình cũng gặp đủ điều khó khăn", windowWidth/8, position1901x1 + 30);
+    text("Tụi nó ép dân bỏ nghề gốm và dệt,\nép họ mình đi đào hầm,\nlàm mỏ mười mấy giờ đồng hồ\nNgay cả nông dân nhà mình cũng gặp đủ điều khó khăn", 0, position1901x1 + 30);
     text('Mong anh nhận thư này, nghe anh.', windowWidth/1.5, position1901x2);
     textSize(16);
     textLeading(18);
-    text(thu1901, 30, position1901 + 20);
+    text(thu1901, 0, position1901 + 20);
     pop();
 
     //Thang 7 nam 1915
-    if (position1915 < -30 || position1915 > windowHeight) {
-        position1915 = -30;
+    if (position1915 < -50 || position1915 > windowHeight) {
+        position1915 = -50;
     };
     position1915 = position1915 + speed1915;
     if (position1915x1 < -10 || position1915x1 > windowHeight) {
@@ -208,6 +212,7 @@ function draw() {
     textFont(inconsolata);
     fill('yellow');
     text("Thưa ông! Tôi đã về đến Cochinchine,\nnên muốn gửi đôi dòng đến ông và gia đình.", windowWidth/3, position1915);
+    text("Thân\nmến.", windowWidth/1.78, position1915x1-80);
     textSize(20);
     textLeading(23);
     text("Bởi thế tôi cố sức nói bà con\ndùng thuốc trừ sâu bệnh cho bông lúa,\nkhi có bệnh phải tìm thấy thuốc\nlấy thuốc uống và tiêm.", windowWidth/2.5, position1915x1);
@@ -215,6 +220,7 @@ function draw() {
     textSize(16);
     textLeading(18);
     text("Trong hai tháng giời, ông và gia đình đã\nsăn sóc và giúp đỡ anh em thợ xứ chúng tôi,\ntôi lại càng biết hơn mọi người lắm.", windowWidth/1.8, position1915-90);
+    text(conNua, windowWidth/1.78, position1915x1 - 35);
     pop();
 
 }
