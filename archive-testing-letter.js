@@ -31,6 +31,7 @@ cứ một dạo lại bắt nộp thêm một loại sưu cắt cổ mới.
 Em thì làm gì còn tiền mà nộp nữa hả anh,
 nên tụi nó đã bắt ông nhà em đi rồi.
     `;
+let position1901x3 = 290;
 
 //1915
 let position1915 = 500;
@@ -93,7 +94,7 @@ let speed1972 = 1;
 let position1972x1 = 820;
 
 //1975
-let position1975 = 920;
+let position1975 = 930;
 let speed1975 = 1;
 let position1975x1 = 950;
 let position1975x2 = 1050;
@@ -235,6 +236,10 @@ function draw() {
         position1901x2 = -50;
     };
     position1901x2 = position1901x2 + speed1901x2;
+    if (position1901x3 > windowHeight) {
+        position1901x3 = 0;
+    };
+    position1901x3 = position1901x3 + speed1901;
     push();
     textSize(32);
     textLeading(30);
@@ -245,7 +250,7 @@ function draw() {
     text("Anh ơi, dạo này\ntụi Pháp lộng hành quá!", 0, position1901x1);
     textSize(20);
     textLeading(23);
-    text("Tụi nó ép dân bỏ nghề gốm và dệt,\nép họ mình đi đào hầm,\nlàm mỏ mười mấy giờ đồng hồ\nNgay cả nông dân nhà mình cũng gặp đủ điều khó khăn", 0, position1901x1 + 200);
+    text("Tụi nó ép dân bỏ nghề gốm và dệt,\nép họ mình đi đào hầm,\nlàm mỏ mười mấy giờ đồng hồ\nNgay cả nông dân nhà mình cũng gặp đủ điều khó khăn", 0, position1901x3);
     text('Mong anh nhận thư này, nghe anh.', windowWidth/1.5, position1901x2);
     textSize(16);
     textLeading(18);
@@ -258,11 +263,11 @@ function draw() {
     };
     position1915 = position1915 + speed1915;
     if (position1915x1 > windowHeight) {
-        position1915x1 = -10;
+        position1915x1 = 700;
     };
     position1915x1 = position1915x1 + speed1915x1;
     if (position1915x2 > windowHeight) {
-        position1915x2 = 200;
+        position1915x2 = 210;
     };
     position1915x2 = position1915x2 + speed1915;
     push();
@@ -289,7 +294,7 @@ function draw() {
     };
     position1944 = position1944 + speed1944;
     if (position1944x1 > windowHeight) {
-        position1944x1 = -20;
+        position1944x1 = 10;
     };
     position1944x1 = position1944x1 + speed1944x1;
     if (position1944x2 > windowHeight) {
@@ -323,7 +328,7 @@ function draw() {
     };
     position1954 = position1954+speed1954;
     if (position1954x1 > windowHeight) {
-        position1954x1 = 0;
+        position1954x1 = -40;
     };
     position1954x1 = position1954x1 + speed1954x1;
     push();
@@ -340,7 +345,7 @@ function draw() {
     text("bây không biết tao mừng rỡ\nthế nào khi mỗi ngày\nkhông nghe thấy tin về bây đâu,\nchỉ sợ bây có chuyện gì.", windowWidth/2.5, position1954+30);
     textSize(16);
     textLeading(18);
-    text(phatThanh, windowWidth/8, position1954+20);
+    text(phatThanh, windowWidth/8, position1954+60);
 
     //1960
     if (position1960>windowHeight) {
@@ -433,7 +438,7 @@ function draw() {
     };
     position1990 = position1990 + speed1990;
     if (position1990x1 > windowHeight){
-        position1990x1 =  -10;
+        position1990x1 =  -20;
     }; 
     position1990x1 = position1990x1 + speed1990;
     push();
