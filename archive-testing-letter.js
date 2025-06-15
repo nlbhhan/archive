@@ -207,7 +207,7 @@ function draw() {
     };
     position1890x2 = position1890x2 + speed1890x2;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -241,7 +241,7 @@ function draw() {
     };
     position1901x3 = position1901x3 + speed1901;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -271,7 +271,7 @@ function draw() {
     };
     position1915x2 = position1915x2 + speed1915;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -306,7 +306,7 @@ function draw() {
     };
     position1944x3 = position1944x3 + speed1944;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -332,7 +332,7 @@ function draw() {
     };
     position1954x1 = position1954x1 + speed1954x1;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -357,7 +357,7 @@ function draw() {
     };
     position1960x1 = position1960x1 + speed1960;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -375,7 +375,7 @@ function draw() {
     };
     position1971 = position1971 + speed1971;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -393,7 +393,7 @@ function draw() {
     };
     position1972x1 = position1972x1 + speed1972;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -418,7 +418,7 @@ function draw() {
     };
     position1975x2 = position1975x2 + speed1975;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
@@ -442,7 +442,7 @@ function draw() {
     }; 
     position1990x1 = position1990x1 + speed1990;
     push();
-    textSize(32);
+    textSize(28);
     textLeading(30);
     noStroke();
     textFont(inconsolata);
