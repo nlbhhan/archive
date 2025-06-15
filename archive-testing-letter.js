@@ -48,17 +48,19 @@ let conNua =
 `Còn nữa, tôi cũng gieo trồng những hột giống mà ông gửi cho chúng tôi,
 và tôi mong là sẽ có quả ngon để chúng tôi cùng vượt qua vụ này.
 `;
+let position1915x2 = 700;
 
 //1944
-let position1944 = 300;
+let position1944 = 250;
 let speed1944 = 1;
 let chetViDoi = 
 `Không biết nhựt trình ở xứ Hương Cảng có đưa tin này không?
 Hôm nay chú với bố con đi nhận xác mẹ, các dì, các bác của con chết vì đói.`;
 let position1944x1 = 400;
 let speed1944x1 = 1;
-let position1944x2 = 800;
+let position1944x2 = 810;
 let speedchetViDoi = 1;
+let position1944x3 = 600;
 let tuiPhap = 
 `Tụi Pháp và Nhật cấm dân mình trồng lúa,
 vơ vét hết mọi tiền bạc trồng lúa mà có được,
@@ -66,7 +68,7 @@ cũng chẳng mở cửa kho lúa để phát lương thực,
 nên dân mình đói khổ mà chết nhiều.`;
 
 //1954
-let position1954 = 360;
+let position1954 = 330;
 let speed1954 = 1;
 let phatThanh = 
 `Phát thanh bên này nói
@@ -77,7 +79,7 @@ let position1954x1 = 230;
 let speed1954x1 = 1;
 
 //1960
-let position1960 = 700;
+let position1960 = 670;
 let speed1960 = 1;
 let position1960x1 = 596;
 
@@ -86,7 +88,7 @@ let position1971 = 800;
 let speed1971 = 1;
 
 //1972
-let position1972 =-40;
+let position1972 =-50;
 let speed1972 = 1;
 let position1972x1 = 820;
 
@@ -95,6 +97,11 @@ let position1975 = 920;
 let speed1975 = 1;
 let position1975x1 = 950;
 let position1975x2 = 1050;
+
+//1990
+let position1990 = 450;
+let speed1990 = 1;
+let position1990x1 = 480;
 
 // let chuoiKiTu = "     .:░▒▓█";
 let chuoiKiTu1 = [
@@ -254,6 +261,10 @@ function draw() {
         position1915x1 = -10;
     };
     position1915x1 = position1915x1 + speed1915x1;
+    if (position1915x2 > windowHeight) {
+        position1915x2 = 200;
+    };
+    position1915x2 = position1915x2 + speed1915;
     push();
     textSize(32);
     textLeading(30);
@@ -264,11 +275,11 @@ function draw() {
     text("Thân\nmến.", windowWidth/1.78, position1915x1-80);
     textSize(20);
     textLeading(23);
-    text("Bởi thế tôi cố sức nói bà con\ndùng thuốc trừ sâu bệnh cho bông lúa,\nkhi có bệnh phải tìm thấy thuốc\nlấy thuốc uống và tiêm.", windowWidth/2.5, position1915x1);
+    text("Bởi thế tôi cố sức nói bà con\ndùng thuốc trừ sâu bệnh cho bông lúa,\nkhi có bệnh phải tìm thấy thuốc\nlấy thuốc uống và tiêm.", windowWidth/3, position1915x1);
     text(canhTac, windowWidth/8, position1915+100);
     textSize(16);
     textLeading(18);
-    text("Trong hai tháng giời, ông và gia đình đã\nsăn sóc và giúp đỡ anh em thợ xứ chúng tôi,\ntôi lại càng biết hơn mọi người lắm.", windowWidth/1.8, position1915+200);
+    text("Trong hai tháng giời, ông và gia đình đã\nsăn sóc và giúp đỡ anh em thợ xứ chúng tôi,\ntôi lại càng biết hơn mọi người lắm.", windowWidth/1.8, position1915x2);
     text(conNua, windowWidth/1.78, position1915x1 - 20);
     pop();
 
@@ -285,6 +296,10 @@ function draw() {
         position1944x2 = -50;
     };
     position1944x2 = position1944x2 + speedchetViDoi;
+    if (position1944x3 > windowHeight) {
+        position1944x3 = 100;
+    };
+    position1944x3 = position1944x3 + speed1944;
     push();
     textSize(32);
     textLeading(30);
@@ -296,10 +311,10 @@ function draw() {
     text("Bố con\nđi cướp kho\nvề nhà,\nmẹ con đã\nkhô quéo và\ngầy guộc ở bên đường.", windowWidth/1.78, position1944x1);
     textSize(20);
     textLeading(23);
-    text(chetViDoi, windowWidth/1.5, position1944+300);
+    text(chetViDoi, windowWidth/1.5, position1944x3);
     text(tuiPhap, windowWidth/8, position1944x2);
     text("bà chỉ uống một ngụm nhỏ, còn lại để cho các em con.", windowWidth/1.5, position1944x1);
-    text("Nhận tin này,\nmong con đừng khóc quá nhiều.", windowWidth/2.5, position1944);
+    text("Nhận tin này,\nmong con đừng khóc quá nhiều.", windowWidth/1.78, position1944+50);
     pop();
 
     //Nam 1954
@@ -308,7 +323,7 @@ function draw() {
     };
     position1954 = position1954+speed1954;
     if (position1954x1 > windowHeight) {
-        position1954x1 = 20;
+        position1954x1 = 0;
     };
     position1954x1 = position1954x1 + speed1954x1;
     push();
@@ -343,7 +358,7 @@ function draw() {
     textFont(inconsolata);
     fill('yellow');
     text("Mấy ngày rồi,\nngười ta nói ông Diệm\ncó lệnh chém những người\nlàm cách mạng ở khắp Nam Kỳ.", windowWidth/3, position1960);
-    text("và rồi con và đồng đội\nsẽ mang bình yên\nđến cho đất nước mình.", 0, position1960+20);
+    text("và rồi con và đồng đội\nsẽ mang bình yên\nđến cho đất nước mình.", 0, position1960+50);
     textSize(20);
     textLeading(23);
     text("Con yêu của mẹ ơi, mẹ nén nỗi nhớ mỗi ngày\nđể cầu nguyện cho con được bình an.", windowWidth/3, position1960x1);
@@ -412,4 +427,24 @@ function draw() {
     text("Đến lúc ấy, em hãy chờ anh mang tin chiến thắng em nhé!", windowWidth/1.5, position1975);
     pop();
 
+    //1990
+    if (position1990 > windowHeight) {
+        position1990 = 50;
+    };
+    position1990 = position1990 + speed1990;
+    if (position1990x1 > windowHeight){
+        position1990x1 =  -10;
+    }; 
+    position1990x1 = position1990x1 + speed1990;
+    push();
+    textSize(32);
+    textLeading(30);
+    noStroke();
+    textFont(inconsolata);
+    fill('yellow');
+    text("Tớ tìm thấy địa chỉ của bạn từ mục\n“Tìm bạn bốn phương” trên báo sáng nay.", windowWidth/1.5, position1990);
+    textSize(20);
+    textLeading(23);
+    text("Tớ năm nay học lớp 9 như bạn,\nvà cũng thích xem chiếu bóng\nvà nghe nhạc từ đài phát thanh\nnhư bạn vậy, nhất là nhạc Trịnh.", 0, position1990x1);
+    pop();
 }
